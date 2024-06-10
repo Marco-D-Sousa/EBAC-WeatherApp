@@ -1,16 +1,22 @@
 import styled from 'styled-components';
+import { colors } from "../../styles/colors";
 
 export const Header = styled.header`
-
-
+    background-color: ${colors.daysList};
     /* Ver a possibilidade de aumentar o height: 80px; e demais espaçamentos */
-    width: 1352px;
+    width:1440px;
     height: 68px;
-    background-color: #fff;
+    border-radius: 20px;
     align-items: center;
     text-align: center;
     display: flex;
     justify-content: space-around;
+    margin-top:40px ;
+    margin-left: 5px;
+    margin-bottom: 44px;
+    
+    
+    
     
     .logo{
         display: flex;
@@ -18,11 +24,7 @@ export const Header = styled.header`
         height: 48px;
         margin-top: 10px;
         margin-left: 0;
-        margin-bottom: 16px;
-    
-        
-
-        
+        margin-bottom: 16px;      
     }
 
     .formButton {    
@@ -30,40 +32,33 @@ export const Header = styled.header`
         display: flex;
         cursor: pointer; 
         
-
-        .form{
+        .form{    
+            height: 30px;
+            width: 170px;
+            text-align: center;
+            border-radius: 16px;
+            border-left:px;
+            border-width: 1px;  
+        }
     
-        height: 30px;
-        width: 170px;
-        text-align: center;
-        border-radius: 16px;
-        border-left:px;
-        border-width: 1px;   
-        
-    }
-    
-        .button{
-            
+        .button{            
             height: 30px;
             width: 65px;
             text-align: center;
             border-radius: 16px;
             cursor: pointer;
             background-color: #BCBCBC;
-            
-        
         }
+    } 
 
-
-    }  
         .localizacao{            
             background-color:#BCBCBC ;
             height: 30px;
             width:85px;
-              justify-content: end;
+            justify-content: end;
             border-radius: 16px;
             cursor: pointer;                  
-                }   
+        }   
 `
 
 export const Title = styled.h3`

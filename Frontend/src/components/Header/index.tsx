@@ -4,6 +4,7 @@ import logo from '../../assets/logo.png'
 const Header = () => {
     return (
         <S.Header>
+            
             <div className='logo' >
                 <img src={logo} />              
             </div>

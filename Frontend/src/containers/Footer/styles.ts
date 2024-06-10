@@ -8,8 +8,9 @@ export const Footer = styled.footer`
         justify-content: space-around;        
         width:1440px;
         height:190px;
-        top:1912px;
+        
         left:43px;
+        
 `
 export const FooterLogo = styled.div`
         margin-top: 50px;
