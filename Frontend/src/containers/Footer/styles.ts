@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
 export const Footer = styled.footer`
-        background-color: ${colors.daysList};
+        background-color: ${colors.containerBg};
         display: flex;
         border-radius: 35px;
         justify-content: space-around;        
@@ -18,12 +18,12 @@ export const FooterLogo = styled.div`
         height: 230px;
 `
 export const List = styled.section`
-    .button{        
+.button{        
         margin-top: 65px;
         display: flex;
         gap: 120px;
         margin-left: 100px;
-    }
+}
 `
 export const About = styled.ul`
                 display: flex;
@@ -38,7 +38,7 @@ export const About = styled.ul`
 `
 
 export const Icon = styled.nav`   
-            .social-links{
+        .social-links{
                 margin-top: 20px;
                 margin-right: 68px;         
                 display: flex;
@@ -47,6 +47,6 @@ export const Icon = styled.nav`
                 height: 29px;
                 margin-left: 40px;
                 grid-gap: 6px;       
-            }     
+        }     
 `
 

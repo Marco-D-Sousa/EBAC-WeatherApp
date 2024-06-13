@@ -3,14 +3,14 @@ import { useSelector } from 'react-redux'
 import { useGetNewLocationQuery } from '../../services/api'
 import { RootReducer } from '../../store'
 import { weatherIcon } from '../../utils/icons'
+import LoadCardA from '../../loaders/LoadCardA'
 
 import * as S from './styles'
 
 import airIcon from '../../assets/air.png'
 import humidityIcon from '../../assets/humidity.png'
 import windIcon from '../../assets/windy.png'
-import pressureIcon from '../../assets/pressure.png'
-import arrow from '../../assets/arrow.png'
+import uv from '../../assets/sunny.png'
 
 type Props = {
     toggleInfo: (state: boolean) => void
@@ -44,11 +44,13 @@ const CurrentCard = ({ toggleInfo }: Props) => {
         }
     }
 
+    if (!data) return <LoadCardA />
+
     return (
         <S.CurrentCard className='card cardHeightA'>
             <div className='fadeIn'>
                 <h2 className='cardTitle'>Clima atual</h2>
-                <p>
+                <p className='cardSubtitle'>
                     {data?.location.localtime.slice(8, 10)} de&nbsp;
                     {months[Number(data?.location.localtime.slice(5, 7)) - 1]} de&nbsp;
                     {data?.location.localtime.slice(0, 4)}&nbsp;
@@ -82,13 +84,15 @@ const CurrentCard = ({ toggleInfo }: Props) => {
                             <span className='listData'>{data?.current.wind_kph} km/h</span>
                         </li>
                         <li>
-                            <h3 className='itemTitle'>Pressão<img className='listIcon' src={pressureIcon} alt="Icone qualidade do ar" /></h3>
-                            <span className='listData'>{data?.current.pressure_mb} mb </span>
+                            <h3 className='itemTitle'>Índice UV<img className='listIcon' src={uv} alt="Icone qualidade do ar" /></h3>
+                            <span className='listData'>{data?.current.uv}</span>
                         </li>
                     </S.infoList>
-                    <div onClick={() => toggleInfo(true)} className='details'>
-                        <span>Mais detalhes</span><img className='more-arrow' src={arrow} alt="Icone seta" />
-                    </div>
+                    <S.CustomButton>
+                        <button onClick={() => toggleInfo(true)} className='detailsBtn'>
+                            <span>Mais detalhes</span><span>&rarr;</span>
+                        </button>
+                    </S.CustomButton>
                 </S.WeatherCardBottom>
             </div>
         </S.CurrentCard>

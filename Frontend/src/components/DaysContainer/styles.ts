@@ -2,12 +2,13 @@ import styled from "styled-components";
 import { colors } from "../../styles/colors";
 
 export const DaysContainer = styled.div`
+    position: relative;
     width: 100%;
-    height: 124px;
-    padding: 12px 54px;
-    background-color: ${colors.daysList};
+    padding: 19px 32px 12px 32px;
+    margin-top: 32px;
+    background-color: ${colors.containerBg};
     display: grid;
-    grid-template-columns: auto 64px auto;
+    grid-template-columns: 1fr 1fr 1fr;
     gap: 78px;
     overflow-x: auto;
     overflow-y: hidden;
@@ -31,8 +32,8 @@ export const ListItem = styled.li`
     gap: 6;
 
     img {
-        max-width: 48px;
-        width: 100%;
+        max-height: 38px;
+        height: 100%;
         margin: 0 auto;
     }
 
@@ -48,11 +49,6 @@ export const ListItem = styled.li`
 
 export const Today = styled(ListItem)`
     font-weight: 600;
-    text-align: center;
-
-    img {
-        margin: 0 auto;
-    }
 
     .day {
         font-weight: 600;
